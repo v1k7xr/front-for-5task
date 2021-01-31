@@ -58,6 +58,7 @@
 <script>
   import { defineComponent } from 'vue'
   import { VueDraggableNext } from 'vue-draggable-next'
+  
   export default defineComponent({
     components: {
       draggable: VueDraggableNext,
@@ -92,13 +93,20 @@
         dragging: true,
       }
     },
+    mounted: function () {
+      console.log('rendered!');
+
+      axios
+      .get('http://127.0.0.1:8000/api/cv')
+      .then(response => (console.log(response)));
+    },
     methods: {
       log(event) {
         console.log(event)
 
         if (event.added) {
           console.log('added!');
-          console.log(`Change status from resume who have ${event.added.element.id}`);
+          console.log(`Change status from resume who have ${event.added.element.id}!`);
         }
       },
     },
