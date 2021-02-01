@@ -17,7 +17,7 @@ const routes = [
   {
     path: '/edit/:id',
     name: 'ChangingResume',
-    component: ChangingResume
+    component: ChangingResume,
   },
   {
     path: '/about',
