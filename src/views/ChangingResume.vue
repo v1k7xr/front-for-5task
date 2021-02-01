@@ -140,8 +140,10 @@ export default {
       var education_type = '';
       var resume_status = '';
 
+      console.log(this.selected);
 
-      switch(this.selected) {
+      console.log(this.vModelStatus);
+      switch(+this.selected) {
         case 1:
             education_type = 'secondary education';
             break;
@@ -156,22 +158,25 @@ export default {
             break;
       }
 
-      switch(this.vModelStatus) {
-        case '1':
+      switch(+this.vModelStatus) {
+        case 1:
             resume_status = 'new';
             break;
-        case '2':
+        case 2:
             resume_status = 'interview scheduled';
             break;
-        case '3':
+        case 3:
             resume_status = 'hired';
             break;
-        case '4':
+        case 4:
             resume_status = 'refused';
+            break;
+        default:
+            resume_status = 'ad';
             break;
       }
 
-      let json = JSON.stringify({
+      var json = JSON.stringify({
           id: this.resume_id,
           status: resume_status,
           profession: this.vModelProfession,

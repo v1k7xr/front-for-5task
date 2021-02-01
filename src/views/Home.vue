@@ -28,10 +28,12 @@
                         v-for="element in interviewScheduledResumeList"
                         :key="element.name"
                     >
+                        <router-link :to="{ name: 'ChangingResume', params: { id: element.id }}">
                         <img :src=element.photoUrl width="189" height="255" alt="Ошибка загрузки фото"> <br>
                         <p> Профессия : {{ element.profession }} </p>
                         <p> ФИО: {{ element.name }} </p>
                         <p> Возраст: {{ element.age }}({{ element.birthDate }})</p>
+                        </router-link>
                     </div>
                 </draggable>
             </div>
@@ -43,10 +45,12 @@
                         v-for="element in acceptedResumeList"
                         :key="element.name"
                     >
+                        <router-link :to="{ name: 'ChangingResume', params: { id: element.id }}">
                         <img :src=element.photoUrl width="189" height="255" alt="Ошибка загрузки фото"> <br>
                         <p> Профессия : {{ element.profession }} </p>
                         <p> ФИО: {{ element.name }} </p>
                         <p> Возраст: {{ element.age }}({{ element.birthDate }})</p>
+                        </router-link>
                     </div>
                 </draggable>
             </div>
@@ -57,11 +61,12 @@
                         class="list-group-item bg-gray-300 m-1 p-3 rounded-md text-center"
                         v-for="element in deniedResumeList"
                         :key="element.name"
-                    >
+                    >   <router-link :to="{ name: 'ChangingResume', params: { id: element.id }}">
                         <img :src=element.photoUrl width="189" height="255" alt="Ошибка загрузки фото"> <br>
                         <p> Профессия : {{ element.profession }} </p>
                         <p> ФИО: {{ element.name }} </p>
                         <p> Возраст: {{ element.age }}({{ element.birthDate }})</p>
+                        </router-link>
                     </div>
                 </draggable>
             </div>
